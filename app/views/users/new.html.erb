@@ -1,5 +1,9 @@
 <h1>Signup</h1>
 
+<% flash.each do |message_type, message| %>
+	<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
 <%= form_for(@user) do |f| %>
 	
 	<p>
