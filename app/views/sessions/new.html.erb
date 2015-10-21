@@ -1,12 +1,25 @@
+<div class="center jumbotron">
+<% if !logged_in? %>
+	
+
 <h1>Log in</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
+	<%= form_for(:session, url: login_path) do |f| %>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<br>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<br>
 
-	<%= f.submit "Log in" %>
-		
+		<%= f.submit "Log in" %>
+
+
+	<% end %>
+
+<% else %>
+	<h1>WELCOME TO MEMBERS-ONLY!</h1>
 <% end %>
+
+</div>

@@ -12,7 +12,9 @@
 	<div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
-<%= yield %>
-
+	<%= render 'layouts/header' %>
+	
+	<%= yield %>
+	
 </body>
 </html>
