@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
 
 	attr_accessor :remember_token
-
+	#before filters
 	before_save {self.email = email.downcase}
 
+	#validations
 	validates :name, presence: true
 
 	validates :email, uniqueness: {case_sensitive: false}, presence: true,
@@ -15,6 +16,10 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	#Relationships
+	has_many :posts
+
+	# Functions
 	def User.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
 														BCrypt::Engine.cost
