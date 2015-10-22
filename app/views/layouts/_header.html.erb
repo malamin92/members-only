@@ -6,10 +6,10 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Home", login_path %></a></li>
         <% if !logged_in? %>
-        <li><%= link_to "Sign up", signup_path %></li>
-          <% end %>
+          <li><%= link_to "Sign up", signup_path %></li>
+        <% end %>
         <% if logged_in? %>
-        <li><%= link_to current_user.name, user_path(current_user) %></li>
+          <li><%= link_to User.find(session[:user_id]).name, @user %></li>
         <% end %>
       </ul>
       
