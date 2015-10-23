@@ -6,8 +6,8 @@
 			<div class="post">
 				<ul>
 					<li><%= post.story %>
-					|<% if logged_in? %>
-						<%= link_to post.user.name, post.user %>
+					<% if logged_in? %>
+						| <%= link_to post.user.name, post.user %>
 					<% end %>
 					</li>
 				</ul>
