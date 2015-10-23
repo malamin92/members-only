@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
   # posts routes
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/index'
-
-  # home
-  root 'sessions#new'
-
-
-  resources :users
   resources :posts, only: [:new, :create, :index]
 
+  # users routes
+  resources :users
   get 'signup' => 'users#new'
+  # home
+  root 'sessions#new'
 
 
   # sessions routes
