@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(post_params)
   	if @post.save
+  		@post.user_id = current_user.id
   		flash[:success] = "Post created"
   		redirect_to posts_path
   	else
@@ -15,7 +16,6 @@ class PostsController < ApplicationController
   	end
   end
 
-  end
 
   def index
   	@posts = Post.all
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   private
-  
+
   def post_params
   	params.require(:post).permit(:story)
   end

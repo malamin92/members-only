@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
   get 'signup' => 'users#new'
   # home
-  root 'sessions#new'
+  root 'posts#index'
 
 
   # sessions routes
