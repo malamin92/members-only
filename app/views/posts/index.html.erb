@@ -1,2 +1,13 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="center" >
+	<h1>Secrets</h1>
+
+	<div class="center jumbotron">
+		<% @posts.each do |secret| %>
+			<div class="post">
+				<ul>
+					<li><%= secret.story %></li>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+</div>

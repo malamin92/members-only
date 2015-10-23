@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   		flash[:success] = "Post created"
   		redirect_to posts_path
   	else
-  		render 'new'
+      flash.now[:danger] = "Try again."
+  		render 'posts/new'
   	end
   end
 
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   # before filters
-  def loggin_in_user
+  def logged_in_user
   	unless logged_in?
   		flash[:danger] = "Please log in."
   		redirect_to login_url
