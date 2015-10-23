@@ -8,11 +8,14 @@
 </head>
 <body>
 
-<% flash.each do |message_type, message| %>
-	<div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+
+	<% flash.each do |message_type, message| %>
+		<div class="alert alert-<%= message_type %>"><%= message %></div>
+	<% end %>
 
 	<%= render 'layouts/header' %>
+
+	<%= render 'layouts/error_messages' %>
 	
 	<%= yield %>
 	

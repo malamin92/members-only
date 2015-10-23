@@ -1,2 +1,17 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="center" >
+	<h1>Secrets</h1>
+
+	<div class="center jumbotron">
+		<% @posts.each do |post| %>
+			<div class="post">
+				<ul>
+					<li><%= post.story %>
+					<% if logged_in? %>
+						| <%= link_to post.user.name, post.user %>
+					<% end %>
+					</li>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+</div>
